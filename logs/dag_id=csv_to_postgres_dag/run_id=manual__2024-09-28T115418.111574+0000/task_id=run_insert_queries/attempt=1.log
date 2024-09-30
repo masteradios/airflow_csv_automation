@@ -1,0 +1,25 @@
+[2024-09-28T11:54:21.225+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-28T11:54:21.255+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag.run_insert_queries manual__2024-09-28T11:54:18.111574+00:00 [queued]>
+[2024-09-28T11:54:21.265+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag.run_insert_queries manual__2024-09-28T11:54:18.111574+00:00 [queued]>
+[2024-09-28T11:54:21.266+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-28T11:54:21.282+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): run_insert_queries> on 2024-09-28 11:54:18.111574+00:00
+[2024-09-28T11:54:21.289+0000] {standard_task_runner.py:63} INFO - Started process 3386 to run task
+[2024-09-28T11:54:21.293+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag', 'run_insert_queries', 'manual__2024-09-28T11:54:18.111574+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/job.py', '--cfg-path', '/tmp/tmpebawew2l']
+[2024-09-28T11:54:21.295+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask run_insert_queries
+[2024-09-28T11:54:21.346+0000] {task_command.py:426} INFO - Running <TaskInstance: csv_to_postgres_dag.run_insert_queries manual__2024-09-28T11:54:18.111574+00:00 [running]> on host c39a3d3a6c9a
+[2024-09-28T11:54:21.438+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag' AIRFLOW_CTX_TASK_ID='run_insert_queries' AIRFLOW_CTX_EXECUTION_DATE='2024-09-28T11:54:18.111574+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-28T11:54:18.111574+00:00'
+[2024-09-28T11:54:21.440+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-28T11:54:21.453+0000] {sql.py:276} INFO - Executing: INSERT INTO sample_table (id, name, age) VALUES (1, 'John Doe', 30);
+INSERT INTO sample_table (id, name, age) VALUES (2, 'Jane Smith', 25);
+INSERT INTO sample_table (id, name, age) VALUES (3, 'Bob Johnson', 22);
+[2024-09-28T11:54:21.464+0000] {base.py:84} INFO - Using connection ID 'write_to_psql' for task execution.
+[2024-09-28T11:54:21.478+0000] {base.py:84} INFO - Using connection ID 'write_to_psql' for task execution.
+[2024-09-28T11:54:21.484+0000] {sql.py:470} INFO - Running statement: INSERT INTO sample_table (id, name, age) VALUES (1, 'John Doe', 30);
+INSERT INTO sample_table (id, name, age) VALUES (2, 'Jane Smith', 25);
+INSERT INTO sample_table (id, name, age) VALUES (3, 'Bob Johnson', 22);, parameters: None
+[2024-09-28T11:54:21.486+0000] {sql.py:479} INFO - Rows affected: 1
+[2024-09-28T11:54:21.488+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-28T11:54:21.499+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=csv_to_postgres_dag, task_id=run_insert_queries, run_id=manual__2024-09-28T11:54:18.111574+00:00, execution_date=20240928T115418, start_date=20240928T115421, end_date=20240928T115421
+[2024-09-28T11:54:21.546+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-28T11:54:21.563+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-28T11:54:21.565+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
